@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Task Board — Team Nexus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="board-header">
+    <div class="board-header__title">
+      <span class="board-header__eyebrow">Team Nexus</span>
+      <h1>Task Board</h1>
+    </div>
+    <button id="addTaskBtn" class="btn-add" type="button">
+      <span class="btn-add__plus" aria-hidden="true">+</span>
+      Add new task
+    </button>
+  </header>
+
+  <main class="board" role="main">
+
+    <section class="column" data-status="in-progress" aria-labelledby="col-in-progress">
+      <header class="column__header">
+        <span class="column__dot column__dot--progress" aria-hidden="true"></span>
+        <h2 id="col-in-progress">In Progress</h2>
+        <span class="column__count" aria-label="task count">0</span>
+      </header>
+      <div class="column__cards"><!-- cards injected by board.js --></div>
+    </section>
+
+    <section class="column" data-status="completed" aria-labelledby="col-completed">
+      <header class="column__header">
+        <span class="column__dot column__dot--completed" aria-hidden="true"></span>
+        <h2 id="col-completed">Completed</h2>
+        <span class="column__count" aria-label="task count">0</span>
+      </header>
+      <div class="column__cards"><!-- cards injected by board.js --></div>
+    </section>
+
+    <section class="column" data-status="wont-do" aria-labelledby="col-wont-do">
+      <header class="column__header">
+        <span class="column__dot column__dot--wontdo" aria-hidden="true"></span>
+        <h2 id="col-wont-do">Won't Do</h2>
+        <span class="column__count" aria-label="task count">0</span>
+      </header>
+      <div class="column__cards"><!-- cards injected by board.js --></div>
+    </section>
+
+  </main>
+
+  <!-- Person 1's data layer, untouched -->
+  <script src="part1.js"></script>
+  <!-- Person 2's board layer -->
+  <script src="board.js"></script>
+</body>
+</html>
