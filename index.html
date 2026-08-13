@@ -53,9 +53,62 @@
 
   </main>
 
+
+  <!-- Person 3's popup layer -->
+   <section class="popup hidden" id="taskPopup">
+      <div class="popup__content">
+      <div class="popup__header">
+        <h1>Task Details</h1>
+          <button class="popup__close" id="closePopupBtn" type="button" aria-label="Close popup">×</button>
+        </div>
+
+      <form class="popup__form" id="taskForm">
+        <div class="task-title">
+        <label for="taskTitle">Task name</label>
+          <input type="text" id="taskTitle" name="taskTitle" required />
+        </div>
+
+        <label for="taskDescription">Description</label>
+        <div>
+          <textarea id="taskDescription" name="taskDescription" rows="4"  placeholder="Enter a short description"></textarea>
+        </div>
+        
+        <label for="taskStatus">Icons</label>
+        <div class="icon-buttons">
+          <button type="button" class="icon-button" id="icon1" data-icon="🏃‍♀️">🏃‍♀️</button>
+          <button type="button" class="icon-button" id="icon2" data-icon="🥗">🥗</button>
+          <button type="button" class="icon-button" id="icon3" data-icon="💬">💬</button>
+          <button type="button" class="icon-button" id="icon4" data-icon="📜">📜</button>
+          <button type="button" class="icon-button" id="icon5" data-icon="🌱">🌱</button>
+          <button type="button" class="icon-button" id="icon6" data-icon="⏰">⏰</button>
+        </div>
+
+        <label for="taskStatus">Status</label>
+         <div class="status-buttons">
+              <button type="button" class="status-button" id="status1" data-status="in-progress">
+                <span class="status-dot status-dot--progress"><img class="status-icon" src="https://i.pinimg.com/736x/2b/f6/dd/2bf6dd3a925fbe204cc41bb9e93973e0.jpg" alt="In Progress" /></span> In Progress
+              </button>
+              <button type="button" class="status-button" id="status2" data-status="completed">
+                <span class="status-dot status-dot--completed"><img class="status-icon" src="https://i.pinimg.com/736x/78/fa/94/78fa9438077616f85ba9e31709011e64.jpg" alt="Completed" /></span> Completed
+              </button>
+              <button type="button" class="status-button" id="status3" data-status="wont-do">
+                <span class="status-dot status-dot--wontdo"><img class="status-icon" src="https://i.pinimg.com/736x/ac/c4/ae/acc4ae9c3c78590791f30624ca7a8f77.jpg" alt="Won't Do" /></span> Won't Do
+              </button>
+          </div>
+          
+        
+        <div class="popup__actions">
+          <button type="button" class="btn-delete" id="deleteTaskBtn">Delete</button>
+          <button type="submit" class="btn-submit" id="saveTaskBtn">Save</button>
+        </div>
+      </form>
+     </div>
+   </section>
+
   <!-- Person 1's data layer, untouched -->
   <script src="part1.js"></script>
   <!-- Person 2's board layer -->
   <script src="board.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>
