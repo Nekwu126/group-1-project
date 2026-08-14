@@ -282,7 +282,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(24, 27, 39, 0.3);
+  background: rgba(24, 27, 39, 0.4);
   display: flex;
   justify-content: flex-end;
   align-items: stretch;
@@ -297,7 +297,7 @@ body {
   max-width: 480px;
   height: 100%;
   overflow-y: auto;
-  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .popup__header {
