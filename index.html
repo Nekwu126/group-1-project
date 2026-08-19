@@ -8,6 +8,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
+ <script>
+  if (!localStorage.getItem('loggedInUser')) {
+    window.location.href = 'login.html';
+  }
+</script> 
 </head>
 <body>
 
@@ -16,10 +21,16 @@
       <span class="board-header__eyebrow">Team Nexus</span>
       <h1>Task Board</h1>
     </div>
+    <div class="board-header__actions">
     <button id="addTaskBtn" class="btn-add" type="button">
       <span class="btn-add__plus" aria-hidden="true">+</span>
       Add new task
     </button>
+
+     <button id="logoutBtn" class="btn-logout" type="button">
+      Log out
+    </button>
+    </div>
   </header>
 
   <main class="board" role="main">
@@ -110,5 +121,6 @@
   <!-- Person 2's board layer -->
   <script src="board.js"></script>
   <script src="popup.js"></script>
+  <script src="logn.js"></script>
 </body>
 </html>

@@ -1,31 +1,68 @@
 /* ===========================================
    SIMPLE AUTH — email only, no password
-   Stores the email in localStorage so index.html
-   can check "is someone signed in?"
+   Stores the email in localStorage.
+   Handles login, board access, and logout.
 =========================================== */
 
+// Get login form elements
 const loginForm = document.getElementById('loginForm');
 const emailInput = document.getElementById('email');
 const errorMsg = document.getElementById('errorMsg');
 
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault(); // stop the page from reloading
+// -------------------------------------------
+// LOGIN
+// -------------------------------------------
 
-  const email = emailInput.value.trim();
+if (loginForm) {
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  // very basic check: must contain "@" and a "." after it
-  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const email = emailInput.value.trim();
 
-  if (!isValidEmail) {
-    errorMsg.classList.remove('hidden');
-    return;
+    // Basic email validation
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!isValidEmail) {
+      errorMsg.classList.remove('hidden');
+      return;
+    }
+
+    errorMsg.classList.add('hidden');
+
+    // Save email locally
+    localStorage.setItem('loggedInUser', email);
+
+    // Send user to the task board
+    window.location.href = 'index.html';
+  });
+}
+
+// -------------------------------------------
+// BOARD ACCESS CHECK
+// -------------------------------------------
+
+// Only run this check if we're on index.html
+const isIndexPage =
+  window.location.pathname.endsWith('index.html') ||
+  window.location.pathname.endsWith('/');
+
+if (isIndexPage) {
+  const loggedInUser = localStorage.getItem('loggedInUser');
+
+  if (!loggedInUser) {
+    window.location.href = 'login.html';
   }
+}
 
-  errorMsg.classList.add('hidden');
+// -------------------------------------------
+// LOGOUT
+// -------------------------------------------
 
-  // "Log in" by saving the email locally
-  localStorage.setItem('loggedInUser', email);
+const logoutBtn = document.getElementById('logoutBtn');
 
-  // Send them to the task board
-  window.location.href = 'index.html';
-});
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('loggedInUser');
+    window.location.href = 'login.html';
+  });
+}
