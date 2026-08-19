@@ -84,7 +84,7 @@ body {
     margin-bottom: 6px;
 }
 
-.auth-form input[type="email"] {
+.auth-form input[type="email"], .auth-form input[type="password"] {
     width: 100%;
     padding: 12px 14px;
     border: 1px solid var(--border);
@@ -94,7 +94,7 @@ body {
     margin-bottom: 8px;
 }
 
-.auth-form input[type="email"]:focus {
+.auth-form input[type="email"]:focus, .auth-form input[type="password"]:focus {
     outline: none;
     border-color: var(--accent-progress);
 }
