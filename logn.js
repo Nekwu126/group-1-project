@@ -8,6 +8,7 @@
 const loginForm = document.getElementById('loginForm');
 const emailInput = document.getElementById('email');
 const errorMsg = document.getElementById('errorMsg');
+const passwordInput = document.getElementById('password');
 
 // -------------------------------------------
 // LOGIN
@@ -17,8 +18,15 @@ if (loginForm) {
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const email = emailInput.value.trim();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
 
+        if (!password) {
+        errorMsg.textContent = 'Please enter your password.';
+        errorMsg.classList.remove('hidden');
+        return;
+      }
+      
     // Basic email validation
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
