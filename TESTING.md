@@ -1,4 +1,4 @@
-INTEGRATION TESTS:
+INTEGRATION TESTS (part 4):
 - Refresh test: refreshed and the page reloaded correctly
 
 - Edit test: clicked an existing card, changed its name, and saved.  The card updates in its place and does not duplicate or break.
