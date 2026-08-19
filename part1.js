@@ -4,7 +4,7 @@
    saved/loaded from localStorage.
 =========================================== */
 
-const STORAGE_KEY = "tasks";
+const STORAGE_KEY = `tasks_${localStorage.getItem("loggedInUser")}`;
 
 const STATUS = {
   IN_PROGRESS: "in-progress",

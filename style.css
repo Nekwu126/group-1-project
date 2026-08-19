@@ -87,7 +87,13 @@ body {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.btn-add {
+.board-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-add, .btn-logout {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -104,27 +110,32 @@ body {
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, box-shadow 0.2s ease;
   flex-shrink: 0;
 }
+.btn-logout{
+  padding: 12px 25px;
+}
 
-.btn-add:hover {
+.btn-add:hover, .btn-logout:hover {
   background: #f3f4f6;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
-.btn-add:active {
+.btn-add:active, .btn-logout:active {
   transform: translateY(0);
 }
 
-.btn-add:focus-visible {
+.btn-add:focus-visible, .btn-logout:focus-visible {
   outline: 3px solid #a78bfa;
   outline-offset: 3px;
 }
 
-.btn-add__plus {
+.btn-add__plus, .btn-logout__plus {
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
 }
+
+
 
 /* ---------- Main Board Panel ---------- */
 
